@@ -1,0 +1,42 @@
+<!--Grupo 07-->
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<title>Dispositivos Móviles</title>
+	<meta charset="utf-8"  />
+<LINK REL=StyleSheet HREF="estilo.css" TYPE="text/css" MEDIA=screen>
+<script src="code.js"></script>
+
+</head>
+
+<body >
+ <h1>Dispositivos Móviles</h1>
+	 <p><button onclick="obtenerMoviles();this.style.display='none';">Dispositivos</button></p>
+	   <div>
+    <form>
+    </form>
+  </div>
+	 <div id="listado" style="display:none;">
+	 <form name="filtro" id="filtro">
+	   <h3>Seleccione Categorias</h3>
+	   <input type="checkbox" id="c1" value="c1" checked>1
+	 <input type="checkbox" id="c2" value="c2" checked>2
+   <input type="checkbox" id="c3" value="c3" checked>3
+   <input type="checkbox" id="c4" value="c4" checked>4
+   <ol><li>Click en la imagen para acercar</li>
+   <li>Click en ? para ordenar ascendente o descendente</li></ol>
+     <table id="tabla" border="1">
+	 <thead>
+	 <tr><th>ID</th><th>Imagen</th><th  id="price">Precio</th>
+	 <th>Nombre</th><th>Descripcion</th><th>Categoria</th><th>Eliminar</th></tr>
+	 </thead>
+	 <tbody id="tbody"></tbody>
+	 </table>
+	 </form>
+	 </div>    
+</body>
+<footer>
+    <p>----- Grupo 07 -----</p>
+</footer>
+</html>
