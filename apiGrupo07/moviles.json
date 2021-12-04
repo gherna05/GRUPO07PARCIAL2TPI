@@ -67,7 +67,7 @@
     },
     {
       "id": 6,
-      "image": "https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg",
+      "image": "https://i.ibb.co/D5D0SR2/LG-K92-5-G.jpg",
       "category": "LG",
       "modelo": "LG K92 5G",
       "pantalla": "6.7\", 1080 x 2400 pixels",
@@ -80,7 +80,7 @@
     },
     {
       "id": 7,
-      "image": "https://fakestoreapi.com/img/71YAIFU48IL._AC_UL640_QL65_ML3_.jpg",
+      "image": "https://i.ibb.co/whbJfnS/LG-K71.jpg",
       "category": "LG",
       "modelo": "LG K71",
       "pantalla": "6.8\", 1080 x 2460 pixels",
@@ -93,7 +93,7 @@
     },
     {
       "id": 8,
-      "image": "https://fakestoreapi.com/img/51UDEzMJVpL._AC_UL640_QL65_ML3_.jpg",
+      "image": "https://i.ibb.co/18P5SVt/LG-G8-X-Thin-Q.jpg",
       "category": "LG",
       "modelo": "LG G8X ThinQ",
       "pantalla": "6.4\", 1080 x 2340 pixels",
@@ -106,7 +106,7 @@
     },
     {
       "id": 9,
-      "image": "https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_.jpg",
+      "image": "https://i.ibb.co/LtHbgFy/LG-G-Pad-II-LTE.jpg",
       "category": "LG",
       "modelo": "LG G Pad II LTE",
       "pantalla": "8.3\", 1200 x 1920 pixels",
@@ -119,7 +119,7 @@
     },
     {
       "id": 10,
-      "image": "https://fakestoreapi.com/img/61U7T1koQqL._AC_SX679_.jpg",
+      "image": "https://i.ibb.co/dDnFJkp/LG-Watch-W7.jpg",
       "category": "LG",
       "modelo": "LG Watch W7",
       "pantalla": "1.2\", 360 x 360 pixels",
@@ -132,7 +132,7 @@
     },
     {
       "id": 11,
-      "image": "https://fakestoreapi.com/img/71kWymZ+c+L._AC_SX679_.jpg",
+      "image": "https://i.ibb.co/StrC6LQ/Huawei-nova-9-Pro.jpg",
       "category": "Huawei",
       "modelo": "Huawei nova 9 Pro",
       "pantalla": " 6.72\", 1236 x 2676 pixels",
@@ -145,7 +145,7 @@
     },
     {
       "id": 12,
-      "image": "https://fakestoreapi.com/img/61mtL65D4cL._AC_SX679_.jpg",
+      "image": "https://i.ibb.co/2qQdMg1/Huawei-P50.jpg",
       "category": "Huawei",
       "modelo": "Huawei P50",
       "pantalla": " 6.5\", 1224 x 2700 pixels",
@@ -158,7 +158,7 @@
     },
     {
       "id": 13,
-      "image": "https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_.jpg",
+      "image": "https://i.ibb.co/6tVKtSf/Huawei-Mate-40-Pro.jpg",
       "category": "Huawei",
       "modelo": "Huawei Mate 40 Pro+",
       "pantalla": "6.76\", 1344 x 2772 pixels",
@@ -171,7 +171,7 @@
     },
     {
       "id": 14,
-      "image": "https://fakestoreapi.com/img/81Zt42ioCgL._AC_SX679_.jpg",
+      "image": "https://i.ibb.co/09k4W44/Huawei-Honor-Pad-X6.jpg",
       "category": "Huawei",
       "modelo": "Huawei Honor Pad X6",
       "pantalla": "9.7\", 800 x 1280 pixels",
@@ -184,7 +184,7 @@
     },
     {
       "id": 15,
-      "image": "https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_.jpg",
+      "image": "https://i.ibb.co/yy6D4kj/Huawei-Watch-2-Classic.jpg",
       "category": "Huawei",
       "modelo": "Huawei Watch 2 Classic",
       "pantalla": "1.2\", 390 x 390 pixels",
@@ -197,7 +197,7 @@
     },
     {
       "id": 16,
-      "image": "https://fakestoreapi.com/img/81XH0e8fefL._AC_UY879_.jpg",
+      "image": "https://i.ibb.co/3yGYr4d/Apple-i-Phone-13-Pro-Max.jpg",
       "category": "Apple",
       "modelo": "Apple iPhone 13 Pro Max",
       "pantalla": "6.7\", 1284 x 2778 pixels",
@@ -210,7 +210,7 @@
     },
     {
       "id": 17,
-      "image": "https://fakestoreapi.com/img/71HblAHs5xL._AC_UY879_-2.jpg",
+      "image": "https://i.ibb.co/PCJNskx/Apple-i-Phone-12-Pro.jpg",
       "category": "Apple",
       "modelo": "Apple iPhone 12 Pro",
       "pantalla": "6.1\", 1170 x 2532 pixels",
@@ -236,7 +236,7 @@
     },
     {
       "id": 19,
-      "image": "https://fakestoreapi.com/img/51eg55uWmdL._AC_UX679_.jpg",
+      "image": "https://i.ibb.co/rMgTYL0/Apple-i-Pad-Pro-11.jpg",
       "category": "Apple",
       "modelo": "Apple iPad Pro 11",
       "pantalla": "11\", 1668 x 2388 pixels",
@@ -249,7 +249,7 @@
     },
     {
       "id": 20,
-      "image": "https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_.jpg",
+      "image": "https://i.ibb.co/KLjVzpY/Apple-Watch-Edition-series-3.jpg",
       "category": "Apple",
       "modelo": "Apple Watch Edition series 3",
       "pantalla": "1.5\", 340 x 272 pixels",
