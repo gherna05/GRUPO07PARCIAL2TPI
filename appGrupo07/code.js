@@ -1,5 +1,5 @@
 var fila =
-  "<tr><td class='id'></td><td class='foto'></td><td class='price'></td><td class='name'></td><td class='action'></td></tr>";
+  "<tr><td class='id'></td><td class='foto'></td><td class='price'></td><td class='name'></td><td class='category'></td><td class='action'></td></tr>";
 var moviles = null;
 URL = 'http://localhost:3000/moviles';
 function codigoCat(catstr) {
@@ -36,8 +36,8 @@ function listarMoviles(moviles) {
   var tr;
   ids = document.getElementsByClassName("id");
   names = document.getElementsByClassName("name");
-  /* descriptions = document.getElementsByClassName("description"); */
-  /* categories = document.getElementsByClassName("category"); */
+ /*descriptions = document.getElementsByClassName("description"); */
+  categories = document.getElementsByClassName("category");
   fotos = document.getElementsByClassName("foto");
   prices = document.getElementsByClassName("price");
   btneliminar = document.getElementsByClassName("action");
@@ -69,11 +69,11 @@ function listarMoviles(moviles) {
       window.location.href = `./detalles.html?id=${mov.id}`
     })
     
-    /* descriptions[nfila].innerHTML = moviles[nfila].description; */
-    /* categories[nfila].innerHTML = moviles[nfila].category;
-    catcode = codigoCat(moviles[nfila].category);
-    tr = categories[nfila].parentElement;
-    tr.setAttribute("class", catcode); */
+     /*descriptions[nfila].innerHTML = moviles[nfila].description; */
+     categories[i].innerHTML = mov.category;
+    catcode = codigoCat(mov.category);
+    tr = categories[i].parentElement;
+    tr.setAttribute("class", catcode);
     prices[i].innerHTML = "$" + mov.precio;
     fotos[i].innerHTML = "<img src='" + mov.image + "'>";
     fotos[i].firstChild.setAttribute(
@@ -88,11 +88,7 @@ function listarMoviles(moviles) {
       "onclick",
       "eliminarMovil(${moviles[nfila].id})"
     );
-   /*  if(moviles[nfila].category=='Samsumg'){
-      tr = categories[nfila].parentElement;
-      tr.setAttribute("class", c1)
-    } */
-    
+       
     i++;
   });
 }
