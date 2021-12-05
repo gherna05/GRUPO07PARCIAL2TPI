@@ -40,19 +40,6 @@
       "video": ""
     },
     {
-      "id": 4,
-      "image": "https://i.ibb.co/p3Jhm4p/samsung-smartwatch-active-2.jpg",
-      "category": "Samsumg",
-      "modelo": "Samsung Galaxy Watch Active 2",
-      "pantalla": "1.4\", 360 x 360 pixels",
-      "precio": "219.00",
-      "procesador": "Exynos 9110 1.15GHz",
-      "RAM": "768MB/1.5GB",
-      "almacenamiento": "4GB",
-      "camara": "No",
-      "video": ""
-    },
-    {
       "id": 5,
       "image": "https://i.ibb.co/kHQnWrJ/Samsung-Galaxy-Tab-S7.jpg",
       "category": "Samsumg",

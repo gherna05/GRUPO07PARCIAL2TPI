@@ -1,5 +1,5 @@
 var fila =
-  "<tr><td class='id'></td><td class='foto'></td><td class='price'></td><td class='name'></td><td class='category'></td><td class='action'></td></tr>";
+  "<tr><td class='id'></td><td class='foto'></td><td class='price'></td><td class='name'></td><td class='category'></td><td class='action'><td class='edit'></td></tr>";
 var moviles = null;
 URL = 'http://localhost:3000/moviles';
 function codigoCat(catstr) {
@@ -27,7 +27,7 @@ function listarMoviles(moviles) {
   precio.setAttribute("onclick", "orden*=-1;listarMoviles(moviles);");
   var num = moviles.length;
   var listado = document.getElementById("listado");
-  var ids, names, prices, descriptions, categories, fotos, btneliminar;
+  var ids, names, prices, descriptions, categories, fotos, btneliminar, btneditar;
   var tbody = document.getElementById("tbody"),
     nfila = 0;
   tbody.innerHTML = "";
@@ -36,13 +36,14 @@ function listarMoviles(moviles) {
   var tr;
   ids = document.getElementsByClassName("id");
   names = document.getElementsByClassName("name");
- /*descriptions = document.getElementsByClassName("description"); */
+  /*descriptions = document.getElementsByClassName("description"); */
   categories = document.getElementsByClassName("category");
   fotos = document.getElementsByClassName("foto");
   prices = document.getElementsByClassName("price");
   btneliminar = document.getElementsByClassName("action");
-  
-  
+  btneditar = document.getElementsByClassName("edit") ;
+
+
 
   if (orden === 0) {
     orden = -1;
@@ -64,13 +65,13 @@ function listarMoviles(moviles) {
   moviles.forEach(mov => {
     ids[i].innerHTML = mov.id;
     names[i].innerHTML = mov.modelo;
-    
-    names[i].addEventListener('click',function(){
+
+    names[i].addEventListener('click', function () {
       window.location.href = `./detalles.html?id=${mov.id}`
     })
-    
-     /*descriptions[nfila].innerHTML = moviles[nfila].description; */
-     categories[i].innerHTML = mov.category;
+
+    /*descriptions[nfila].innerHTML = moviles[nfila].description; */
+    categories[i].innerHTML = mov.category;
     catcode = codigoCat(mov.category);
     tr = categories[i].parentElement;
     tr.setAttribute("class", catcode);
@@ -84,11 +85,12 @@ function listarMoviles(moviles) {
     btneliminar[i].innerHTML = "<button>Eliminar</button>";
     btneliminar[i].firstChild.setAttribute("class", "eliminar");
     btneliminar[i].firstChild.setAttribute("id", mov.id);
-    btneliminar[i].firstChild.setAttribute(
-      "onclick",
-      "eliminarMovil(${moviles[nfila].id})"
-    );
-       
+    btneliminar[i].firstChild.setAttribute("onclick","eliminarMovil("+mov.id+")" );
+    
+    btneditar[i].innerHTML="<button>Editar</button>";
+    btneliminar[i].firstChild.setAttribute("class", "editar");
+    btneliminar[i].firstChild.setAttribute("id", mov.id);
+    btneliminar[i].firstChild.setAttribute("onclick","editMovil("+mov.id+")" );
     i++;
   });
 }
@@ -98,16 +100,28 @@ function obtenerMoviles() {
     .then((res) => res.json())
     .then((data) => {
       moviles = data;
-	  moviles.forEach(
-		function(moviles){
-			moviles.precio=parseFloat(moviles.precio)
-		});
+      moviles.forEach(
+        function (moviles) {
+          moviles.precio = parseFloat(moviles.precio)
+        });
       listarMoviles(data);
     });
 }
 
 
-function eliminarMovil(id) {}
+function eliminarMovil(id) {
+  var url = 'http://localhost:3000/moviles/' + id;
+  
+  fetch(url, { method: "DELETE" })
+    .then(res => res.status)
+    .then(codigo => {
+      switch (codigo) {
+        case 200: alert("producto borrado");
+          break;
+        case 404: alert("producto no existe"); break;
+      }
+    });
+}
 
 function ordenarDesc(p_array_json, p_key) {
   p_array_json.sort(function (a, b) {
@@ -127,36 +141,38 @@ function ordenarAsc(p_array_json, p_key) {
 
 obtenerMoviles();
 
-const agregarMovil = () =>{
-	const formData = new FormData(document.querySelector('#addMovil'));
-	const movil = {
-		id: 21,
-		image : formData.get('image'),
-		category : formData.get('categoria'),
-		modelo : formData.get('modelo'),
-		pantalla : formData.get('pantalla'),
-		precio : formData.get('precio'),
-		procesador : formData.get('procesador'),
-		RAM : formData.get('ram'),
-		almacenamiento : formData.get('almacenamiento'),
-		camara : formData.get('camara'),
-		video : ""
-	}
-	/* console.log(movil) */
-	fetch(URL,{
-		method:'POST',
-		body: JSON.stringify(movil),
-		headers: {
-			'Content-Type':'Application/json'
-		}
-	})
-	.then((res) => res.json())
+const agregarMovil = () => {
+  const formData = new FormData(document.querySelector('#addMovil'));
+  const movil = {
+    id: 21,
+    image: formData.get('image'),
+    category: formData.get('categoria'),
+    modelo: formData.get('modelo'),
+    pantalla: formData.get('pantalla'),
+    precio: formData.get('precio'),
+    procesador: formData.get('procesador'),
+    RAM: formData.get('ram'),
+    almacenamiento: formData.get('almacenamiento'),
+    camara: formData.get('camara'),
+    video: ""
+  }
+  /* console.log(movil) */
+  fetch(URL, {
+    method: 'POST',
+    body: JSON.stringify(movil),
+    headers: {
+      'Content-Type': 'Application/json'
+    }
+  })
+    .then((res) => res.json())
     .then((response) => {
       console.log(response);
       obtenerMoviles();
     });
 
 
-
+   function editMovil(id){
+     
+   }
 
 }
