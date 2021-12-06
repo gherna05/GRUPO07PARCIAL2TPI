@@ -207,19 +207,6 @@
       "video": ""
     },
     {
-      "id": 18,
-      "image": "https://fakestoreapi.com/img/71z3kpMAYsL._AC_UY879_.jpg",
-      "category": "Apple",
-      "modelo": "Apple iPhone 12 Pro",
-      "pantalla": "6.1\", 1170 x 2532 pixels",
-      "precio": "999.00",
-      "procesador": "Apple A14 Bionic",
-      "RAM": "6GB",
-      "almacenamiento": "128GB/256GB/512GB",
-      "camara": "Cuádruple, 12MP+12MP +12MP+LiDAR",
-      "video": ""
-    },
-    {
       "id": 19,
       "image": "https://i.ibb.co/rMgTYL0/Apple-i-Pad-Pro-11.jpg",
       "category": "Apple",
