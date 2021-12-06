@@ -1,0 +1,200 @@
+<!--Grupo 07-->
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>Dispositivos Móviles</title>
+    <meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="StyleSheet" href="/appGrupo07/estilo.css" type="text/css" media="screen" />
+	<!-- Agregando bootstrap -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <script src="/appGrupo07/code.js"></script>
+  </head>
+
+  <body>
+    <h1>Dispositivos Móviles</h1>
+    <!-- <p>
+      <button onclick="obtenerMoviles();this.style.display='none';">
+        Dispositivos
+      </button>
+    </p> -->
+    <div>
+      <form></form>
+    </div>
+    <div class="container" id="listado" style="display: none">
+      <form name="filtro" id="filtro">
+        <h3>Seleccione Categorias</h3>
+        <input type="checkbox" id="c1" value="c1" checked >Samsumg
+        <input type="checkbox" id="c2" value="c2" checked >LG
+        <input type="checkbox" id="c3" value="c3" checked >Huawei
+        <input type="checkbox" id="c4" value="c4" checked >Apple
+        <ol>
+          <li>Pasar Mouse en la imagen para acercar</li>
+          <li>Click en Precio para ordenar ascendente o descendente</li>
+		  <li>Presione el nombre para ver detalles
+        </ol>
+		 <!-- Boton abrir modal -->
+		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addMovilModal" data-whatever="@mdo">Agregar Nuevo</button>
+
+        <table class="table"><!--  id="tabla" border="1" -->
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Imagen</th>
+              <th id="price">Precio</th>
+              <th class="align-middle">Nombre</th>
+			  <th>Categoria</th>
+              <!-- <th>Descripcion</th> -->
+              <!-- <th>Categoria</th> -->
+              <th>Eliminar</th>
+			  <th>Editar</th>
+            </tr>
+          </thead>
+          <tbody id="tbody"></tbody>
+        </table>
+      </form>
+    </div>
+
+	<!-- MODAL para mostrar formulario -->
+	<div class="modal fade" id="addMovilModal" tabindex="-1" aria-labelledby="addMovilModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg">
+		  <div class="modal-content">
+			<div class="modal-header">
+			  <h5 class="modal-title" id="addMovilModalLabel">Ingresar Movil</h5>
+			  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			  </button>
+			</div>
+			<div class="modal-body">
+			  <form id="addMovil">
+				<div class="form-group pl-5 pr-5">
+					<label for="exampleFormControlSelect1">Categoria</label>
+					<select class="form-control "  name="categoria">
+					  <option>Seleccion un categoria</option>
+					  <option value="Samsumg">Samsumg</option>
+					  <option value="LG">LG</option>
+					  <option value="Huawei">Huawei</option>
+					  <option value="Apple">Apple</option>
+					</select>
+				  </div>
+				<div class="form-group pl-5 pr-5">
+				  <label for="modelo" class="col-form-label">Modelo:</label>
+				  <input type="text" class="form-control" id="modelo" name="modelo">
+				</div>
+				<div class="form-group pl-5 pr-5">
+					<label for="pantalla" class="col-form-label">Pantalla:</label>
+					<input type="text" class="form-control" id="pantalla" name="pantalla">
+				  </div>
+				  <div class="form-group pl-5 pr-5">
+					<label for="procesador" class="col-form-label">Procesador:</label>
+					<input type="text" class="form-control" id="procesador" name="procesador">
+				  </div>
+				  <div class="form-group pl-5 pr-5">
+					<label for="almacenamiento" class="col-form-label">Almacenamiento:</label>
+					<input type="text" class="form-control" id="almacenamiento" name="almacenamiento">
+				  </div>
+				  <div class="form-group pl-5 pr-5">
+					<label for="ram" class="col-form-label">RAM:</label>
+					<input type="text" class="form-control" id="ram" name="ram">
+				  </div>
+				  <div class="form-group pl-5 pr-5">
+					<label for="camara" class="col-form-label">camara:</label>
+					<input type="text" class="form-control" id="camara" name="camara" >
+				  </div>
+				  <div class="form-group pl-5 pr-5">
+					<label for="precio" class="col-form-label">Precio:</label>
+					<input type="number" class="form-control" id="precio" name="precio">
+				  </div>
+				  <div class="form-group pl-5 pr-5">
+					<label for="image" class="col-form-label">URL imagen:</label>
+					<input type="text" class="form-control" id="image" name="image">
+				  </div>
+			  </form>
+			</div>
+			<div class="modal-footer">
+			  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+			  <button type="button" class="btn btn-primary" onclick="agregarMovil()" >Guardar</button>
+			</div>
+		  </div>
+		</div>
+	  </div>
+
+
+
+
+	  <!-- MODAL para mostrar formulario editar -->
+	<div class="modal fade" id="editMovilModal" tabindex="-1" aria-labelledby="editMovilModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg">
+		  <div class="modal-content">
+			<div class="modal-header">
+			  <h5 class="modal-title" id="editMovilModalLabel">Editar Movil</h5>
+			  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			  </button>
+			</div>
+			<div class="modal-body">
+			  <form id="editMovil">
+				<input type="hidden" class="form-control" id="id" name="id">
+				<div class="form-group pl-5 pr-5">
+					<label for="exampleFormControlSelect1">Categoria</label>
+					<select class="form-control "  name="categoria" id="categoria">
+					  <option>Seleccion un categoria</option>
+					  <option value="Samsumg">Samsumg</option>
+					  <option value="LG">LG</option>
+					  <option value="Huawei">Huawei</option>
+					  <option value="Apple">Apple</option>
+					</select>
+				  </div>
+				<div class="form-group pl-5 pr-5">
+				  <label for="modelo" class="col-form-label">Modelo:</label>
+				  <input type="text" class="form-control" id="modelo" name="modelo">
+				</div>
+				<div class="form-group pl-5 pr-5">
+					<label for="pantalla" class="col-form-label">Pantalla:</label>
+					<input type="text" class="form-control" id="pantalla" name="pantalla">
+				  </div>
+				  <div class="form-group pl-5 pr-5">
+					<label for="procesador" class="col-form-label">Procesador:</label>
+					<input type="text" class="form-control" id="procesador" name="procesador">
+				  </div>
+				  <div class="form-group pl-5 pr-5">
+					<label for="almacenamiento" class="col-form-label">Almacenamiento:</label>
+					<input type="text" class="form-control" id="almacenamiento" name="almacenamiento">
+				  </div>
+				  <div class="form-group pl-5 pr-5">
+					<label for="ram" class="col-form-label">RAM:</label>
+					<input type="text" class="form-control" id="ram" name="ram">
+				  </div>
+				  <div class="form-group pl-5 pr-5">
+					<label for="camara" class="col-form-label">camara:</label>
+					<input type="text" class="form-control" id="camara" name="camara" >
+				  </div>
+				  <div class="form-group pl-5 pr-5">
+					<label for="precio" class="col-form-label">Precio:</label>
+					<input type="number" class="form-control" id="precio" name="precio">
+				  </div>
+				  <div class="form-group pl-5 pr-5">
+					<label for="image" class="col-form-label">URL imagen:</label>
+					<input type="text" class="form-control" id="image" name="image">
+				  </div>
+			  </form>
+			</div>
+			<div class="modal-footer">
+			  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+			  <button type="button" class="btn btn-primary" onclick="actualizarMovil()" >Guardar</button>
+			</div>
+		  </div>
+		</div>
+	  </div>
+
+
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+  </body>
+  <footer>
+    <p>----- Grupo 07 -----</p>
+  </footer>
+</html>
+
