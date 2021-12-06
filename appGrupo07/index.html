@@ -44,9 +44,11 @@
               <th>Imagen</th>
               <th id="price">Precio</th>
               <th class="align-middle">Nombre</th>
+			  <th>Categoria</th>
               <!-- <th>Descripcion</th> -->
               <!-- <th>Categoria</th> -->
               <th>Eliminar</th>
+			  <th>Editar</th>
             </tr>
           </thead>
           <tbody id="tbody"></tbody>
@@ -113,6 +115,74 @@
 			<div class="modal-footer">
 			  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 			  <button type="button" class="btn btn-primary" onclick="agregarMovil()" >Guardar</button>
+			</div>
+		  </div>
+		</div>
+	  </div>
+
+
+
+
+	  <!-- MODAL para mostrar formulario editar -->
+	<div class="modal fade" id="editMovilModal" tabindex="-1" aria-labelledby="editMovilModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg">
+		  <div class="modal-content">
+			<div class="modal-header">
+			  <h5 class="modal-title" id="editMovilModalLabel">Editar Movil</h5>
+			  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			  </button>
+			</div>
+			<div class="modal-body">
+			  <form id="editMovil">
+				<input type="hidden" class="form-control" id="id" name="id">
+				<div class="form-group pl-5 pr-5">
+					<label for="exampleFormControlSelect1">Categoria</label>
+					<select class="form-control "  name="categoria" id="categoria">
+					  <option>Seleccion un categoria</option>
+					  <option value="Samsumg">Samsumg</option>
+					  <option value="LG">LG</option>
+					  <option value="Huawei">Huawei</option>
+					  <option value="Apple">Apple</option>
+					</select>
+				  </div>
+				<div class="form-group pl-5 pr-5">
+				  <label for="modelo" class="col-form-label">Modelo:</label>
+				  <input type="text" class="form-control" id="modelo" name="modelo">
+				</div>
+				<div class="form-group pl-5 pr-5">
+					<label for="pantalla" class="col-form-label">Pantalla:</label>
+					<input type="text" class="form-control" id="pantalla" name="pantalla">
+				  </div>
+				  <div class="form-group pl-5 pr-5">
+					<label for="procesador" class="col-form-label">Procesador:</label>
+					<input type="text" class="form-control" id="procesador" name="procesador">
+				  </div>
+				  <div class="form-group pl-5 pr-5">
+					<label for="almacenamiento" class="col-form-label">Almacenamiento:</label>
+					<input type="text" class="form-control" id="almacenamiento" name="almacenamiento">
+				  </div>
+				  <div class="form-group pl-5 pr-5">
+					<label for="ram" class="col-form-label">RAM:</label>
+					<input type="text" class="form-control" id="ram" name="ram">
+				  </div>
+				  <div class="form-group pl-5 pr-5">
+					<label for="camara" class="col-form-label">camara:</label>
+					<input type="text" class="form-control" id="camara" name="camara" >
+				  </div>
+				  <div class="form-group pl-5 pr-5">
+					<label for="precio" class="col-form-label">Precio:</label>
+					<input type="number" class="form-control" id="precio" name="precio">
+				  </div>
+				  <div class="form-group pl-5 pr-5">
+					<label for="image" class="col-form-label">URL imagen:</label>
+					<input type="text" class="form-control" id="image" name="image">
+				  </div>
+			  </form>
+			</div>
+			<div class="modal-footer">
+			  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+			  <button type="button" class="btn btn-primary" onclick="actualizarMovil()" >Guardar</button>
 			</div>
 		  </div>
 		</div>

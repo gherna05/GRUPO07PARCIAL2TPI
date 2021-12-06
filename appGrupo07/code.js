@@ -1,7 +1,7 @@
 var fila =
-  "<tr><td class='id'></td><td class='foto'></td><td class='price'></td><td class='name'></td><td class='category'></td><td class='action'><td class='edit'></td></tr>";
+  "<tr><td class='id'></td><td class='foto'></td><td class='price'></td><td class='name'></td><td class='category'></td><td class='action'></td><td class='editar'></td></tr>";
 var moviles = null;
-URL = 'http://localhost:3000/moviles';
+URL = "http://localhost:3000/moviles";
 function codigoCat(catstr) {
   var code = "null";
   switch (catstr) {
@@ -41,9 +41,8 @@ function listarMoviles(moviles) {
   fotos = document.getElementsByClassName("foto");
   prices = document.getElementsByClassName("price");
   btneliminar = document.getElementsByClassName("action");
-  btneditar = document.getElementsByClassName("edit") ;
-
-
+  btneditar = document.getElementsByClassName("editar");
+  
 
   if (orden === 0) {
     orden = -1;
@@ -65,8 +64,9 @@ function listarMoviles(moviles) {
   moviles.forEach(mov => {
     ids[i].innerHTML = mov.id;
     names[i].innerHTML = mov.modelo;
-
-    names[i].addEventListener('click', function () {
+    
+    names[i].addEventListener('click',function(e){
+      e.preventDefault();
       window.location.href = `./detalles.html?id=${mov.id}`
     })
 
@@ -87,10 +87,17 @@ function listarMoviles(moviles) {
     btneliminar[i].firstChild.setAttribute("id", mov.id);
     btneliminar[i].firstChild.setAttribute("onclick","eliminarMovil("+mov.id+")" );
     
-    btneditar[i].innerHTML="<button>Editar</button>";
-    btneliminar[i].firstChild.setAttribute("class", "editar");
-    btneliminar[i].firstChild.setAttribute("id", mov.id);
-    btneliminar[i].firstChild.setAttribute("onclick","editMovil("+mov.id+")" );
+     //ingresando boton eliminar
+     btneditar[i].innerHTML = "<button>Editar</button>";
+     btneditar[i].firstChild.setAttribute("class", "edit");
+     btneditar[i].firstChild.setAttribute("id", mov.id);
+     btneditar[i].firstChild.setAttribute(
+       "onclick",
+       `editarMovil(${mov.id})`
+     );
+     btneditar[i].addEventListener('click',function(e){
+      e.preventDefault();
+    })   
     i++;
   });
 }
@@ -169,10 +176,53 @@ const agregarMovil = () => {
       console.log(response);
       obtenerMoviles();
     });
-
-
-   function editMovil(id){
-     
-   }
-
 }
+
+const editarMovil = (id) => {
+  let movil = {};
+  moviles.filter(mov => {
+    if(mov.id == id){
+      movil = mov
+    }
+  })
+  document.querySelector('#editMovil #id').value = id;
+  document.querySelector('#editMovil #modelo').value = movil.modelo;
+  document.querySelector('#editMovil #pantalla').value = movil.pantalla;
+  document.querySelector('#editMovil #procesador').value = movil.procesador;
+  document.querySelector('#editMovil #almacenamiento').value = movil.almacenamiento;
+  document.querySelector('#editMovil #ram').value = movil.RAM;
+  document.querySelector('#editMovil #camara').value = movil.camara;
+  document.querySelector('#editMovil #precio').value = movil.precio;
+  document.querySelector('#editMovil #image').value = movil.image;
+  $("#editMovilModal").modal('show');
+}
+
+const actualizarMovil = () => {
+  const movil = {
+    id : document.querySelector('#editMovil #id').value,
+    image : document.querySelector('#editMovil #image').value,
+    category : document.querySelector('#editMovil #categoria').value,
+    modelo : document.querySelector('#editMovil #modelo').value,
+    pantalla : document.querySelector('#editMovil #pantalla').value,
+    precio : document.querySelector('#editMovil #precio').value,
+    procesador: document.querySelector('#editMovil #procesador').value,
+    RAM: document.querySelector('#editMovil #ram').value,
+    almacenamiento: document.querySelector('#editMovil #almacenamiento').value,
+    camara: document.querySelector('#editMovil #camara').value
+  }
+
+  fetch('http://localhost:3000/moviles/'+movil.id,{
+    method:'PUT',
+    body:JSON.stringify(movil),
+    headers:{
+			'Content-Type':'Application/json'
+		}
+  })
+  .then((res) => res.json())
+  .catch (err => console.log(err))
+  .then((response) => {
+      console.log(response);
+      obtenerMoviles();
+    });
+
+} 

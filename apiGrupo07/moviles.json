@@ -4,14 +4,13 @@
       "id": 1,
       "image": "https://i.ibb.co/9VDnfnd/Samsung-Galaxy-A03-Core.jpg",
       "category": "Samsumg",
-      "modelo": "Samsumg Galaxy A03 Core",
+      "modelo": "Samsumg Galaxy A03 Core s",
       "pantalla": "6.5\", 720 x 1600 pixels",
-      "precio": "120.00",
+      "precio": "120",
       "procesador": "Unisoc SC9863A 1.6GHz",
       "RAM": "2GB",
       "almacenamiento": "32GB",
-      "camara": "8 MP",
-      "video": ""
+      "camara": "8 MP"
     },
     {
       "id": 2,
@@ -19,12 +18,11 @@
       "category": "Samsumg",
       "modelo": "Samsumg Galaxy M52 5G",
       "pantalla": "6.7\", 1080 x 2400 pixels",
-      "precio": "460.00",
+      "precio": "460",
       "procesador": "Snapdragon 778G 2.4GHz",
       "RAM": "6GB",
       "almacenamiento": "128GB",
-      "camara": "Triple, 64MP+12MP+5MP",
-      "video": ""
+      "camara": "Triple, 64MP+12MP+5MP"
     },
     {
       "id": 3,
@@ -245,19 +243,6 @@
       "RAM": "768MB",
       "almacenamiento": "16GB",
       "camara": "No",
-      "video": ""
-    },
-    {
-      "id": 21,
-      "image": "https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_.jpg",
-      "category": "LG",
-      "modelo": "LG1",
-      "pantalla": "5 pulgadas",
-      "precio": "100",
-      "procesador": "Intel",
-      "RAM": "8GB",
-      "almacenamiento": "16GB",
-      "camara": "8MP",
       "video": ""
     }
   ]
