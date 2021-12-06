@@ -67,7 +67,7 @@ function listarMoviles(moviles) {
     
     names[i].addEventListener('click',function(e){
       e.preventDefault();
-      window.location.href = `./detalles.html?id=${mov.id}`
+      window.location.href = `../appGrupo07/detalles.html?id=${mov.id}`
     })
 
     /*descriptions[nfila].innerHTML = moviles[nfila].description; */
