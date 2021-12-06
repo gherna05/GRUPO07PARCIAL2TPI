@@ -10,7 +10,7 @@ fetch(`${url}/${id}`)
     .then(data => {
         let datos = '';
         datos += `<img src="${data.image}" >
-        <p><strong>Modelo: </strong>${data.modelo}</p>
+        <p aling="center"><strong>Modelo: </strong>${data.modelo}</p>
         <p><strong>Pantalla: </strong>${data.pantalla}</p> 
         <p><strong>Procesador: </strong>${data.procesador}</p>
         <p><strong>RAM: </strong>${data.RAM}</p>

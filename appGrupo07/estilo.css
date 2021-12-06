@@ -1,5 +1,4 @@
 /*Grupo 07*/
-img {width:3cm;height:3cm;}
 table {
 	border-collapse: collapse;
     margin: 25px 0;
@@ -17,6 +16,7 @@ th {
 }
 td {
     padding: 12px 15px;
+    text-align: center;
 }
 li {color:midnightblue;}
 /*si chequea muestra los productos sin cheque desaparecen los productos*/
@@ -42,7 +42,7 @@ body{
 thead tr {
     background-color: #009879;
     color: #ffffff;
-    text-align: left;
+    text-align: center;
 }
 
 h2{
@@ -57,6 +57,7 @@ h1{
     text-transform: uppercase;
     letter-spacing: 1px;
     color: navy;
+    text-align: center;
 }
 button {
   background-color: rgb(68, 12, 12);
@@ -72,3 +73,27 @@ button {
   border-radius: 8px;
   font-weight: 700;
 }
+
+img{
+    height:200px;
+    width: 170px;
+    display:block;
+    margin:auto;
+}
+
+img:hover{
+    transform:scale(1.5);
+}
+
+p{
+    text-align: center;
+    color:black:
+}
+
+a{
+    display: block;
+    color: #FFFFFF;
+    text-align: left;
+    text-decoration: none;
+	padding: 14px 16px;
+  }
